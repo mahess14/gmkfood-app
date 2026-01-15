@@ -20,10 +20,11 @@ app.use(express.json());
 // Database connection
 //mongoose.connect("mongodb://localhost:27017/foodwebsites")
 
-mongoose.connect("mongodb+srv://mahesssvec_db_user:21lX21AfQfblvH2O@cluster0.57w6agl.mongodb.net/food")
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected ✅"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
 app.use('/api/menu', menuRoutes);
