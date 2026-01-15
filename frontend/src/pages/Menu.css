@@ -1,0 +1,246 @@
+/* Base styles */
+.menu-container {
+
+  background-image: url('https://img.freepik.com/free-photo/flat-lay-different-ingredients-composition-with-copy-space_23-2148541885.jpg?uid=R182221324&ga=GA1.1.1459837234.1736409783&semt=ais_hybrid&w=740');
+  background-size:cover;
+
+  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.menu-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.view-cart-btn {
+  background-color: #1d4ed8; /* blue-700 */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.8rem;
+}
+
+.view-cart-btn:hover {
+  background-color: #2563eb; /* blue-600 */
+}
+
+
+/* Loading state */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #ff6b6b;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error state */
+.error-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-container button {
+  padding: 0.5rem 1rem;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Menu title */
+.menu-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Category filters */
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+
+}
+
+.category-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 25px;
+  padding: 15px;
+}
+
+.category-btn:hover {
+  background: #e0e0e0;
+}
+
+.category-btn.active {
+  background: #ff6b6b;
+  color: white;
+}
+
+/* Menu grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Menu item card */
+.menu-item-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.item-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.item-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+  transition: transform 0.5s ease;
+}
+
+.menu-item-card:hover .item-image-container img {
+  transform: scale(1.05);
+}
+
+.price-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.item-details {
+  padding: 1.5rem;
+}
+
+.item-details h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman';
+  color: #333;
+}
+
+.item-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-to-cart-btn, .details-btn {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn {
+  background: #f70202;
+  color: white;
+}
+
+.add-to-cart-btn:hover {
+  background: #ff5252;
+}
+
+.details-btn {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.details-btn:hover {
+  background: #e0e0e0;
+}
+
+.no-items {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .item-image-container {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-container {
+    padding: 1rem;
+  }
+  
+  .item-actions {
+    flex-direction: column;
+  }
+}
+
+
+
