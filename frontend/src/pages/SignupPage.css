@@ -1,0 +1,112 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f8f9fa;
+  padding: 5px;
+ 
+}
+
+
+
+
+.signup-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 450px;
+  background-image: url('https://img.freepik.com/free-photo/flat-lay-different-ingredients-composition-with-copy-space_23-2148541885.jpg?uid=R182221324&ga=GA1.1.1459837234.1736409783&semt=ais_hybrid&w=740');
+  background-size:cover;
+  
+}
+
+.signup-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.signup-form {
+  margin-top:5px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom:5px;
+font-size: large;
+  color: #0a0a0a;
+  font-family:Candara;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color:#ff4c4c;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.signup-button:hover {
+  background-color: #ff4c4c;
+}
+
+.signup-button:disabled {
+  background-color: #ff4c4c;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e74c3c;
+  background-color: #fdecea;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color:#4606f7;
+}
+
+.login-link a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

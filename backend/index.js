@@ -30,10 +30,11 @@ mongoose
   res.send("Backend is running 🚀");
 });
 
+app.use("/api/orders", require("./routes/orderRoutes"));
 // Routes
 app.use('/api/menu', menuRoutes);
 app.use('/api/cart', cartRoutes);
-app.use("/api/users", userRoutes);
+app.use('/api/users', userRoutes);
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

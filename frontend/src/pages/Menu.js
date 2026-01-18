@@ -10,7 +10,11 @@ const Menu = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
-  const [cart, setCart] = useState([]);
+
+  // ✅ Load cart from localStorage
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
   const [showCart, setShowCart] = useState(false);
 
   const categories = ['all', 'burger', 'pizza', 'pasta', 'noodles', 'salad', 'soup', 'dessert'];
@@ -18,8 +22,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/menu');
-        
+        const response = await axios.get('https://gmkfood-app-4.onrender.com/api/menu');
         setMenuItems(response.data);
       } catch (err) {
         setError('Failed to load menu. Please try again later.');
@@ -27,7 +30,6 @@ const Menu = () => {
         setLoading(false);
       }
     };
-
     fetchMenuItems();
   }, []);
 
@@ -35,16 +37,20 @@ const Menu = () => {
     ? menuItems
     : menuItems.filter(item => item.category === activeCategory);
 
+  // ✅ Add item to cart and save to localStorage
   const addToCart = (item) => {
-    setCart([...cart, item]);
+    const updatedCart = [...cart, item];
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
     toast.success(`${item.name} added to cart`);
   };
 
+  // ✅ Remove item from cart and update localStorage
   const removeFromCart = (index) => {
     const removedItem = cart[index];
-    const newCart = [...cart];
-    newCart.splice(index, 1);
-    setCart(newCart);
+    const updatedCart = cart.filter((_, i) => i !== index);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
     toast.info(`${removedItem.name} removed from cart`);
   };
 

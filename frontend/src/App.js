@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
+import Login from "./pages/LoginPage";
+import Signup from "./pages/SignupPage";
+import Payment from "./pages/Payment";
 
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-
-import { ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
@@ -17,15 +17,19 @@ function App() {
     <Router>
       <Navbar />
       <ToastContainer position="top-center" autoClose={2000} />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+  
+        {/* ✅ Payment Route */}
+        <Route path="/payment" element={<Payment />} />
       </Routes>
-      <Footer/>
+
+      <Footer />
     </Router>
-    
   );
 }
 
