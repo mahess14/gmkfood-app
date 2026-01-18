@@ -31,7 +31,7 @@ const Payment = () => {
       return;
     }
 
-    await fetch("http://localhost:5000/api/orders/create", {
+    await fetch("https://gmkfood-app-5.onrender.com/api/orders/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
